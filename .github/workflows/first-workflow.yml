@@ -7,6 +7,6 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v4
       - name: Run Script
-        run: python ./src/app.py
+        run: python src/app.py
       - name: Run Tests
-        run: python ./test/dummy_tester.py
+        run: python test/dummy_tester.py
