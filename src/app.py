@@ -11,7 +11,7 @@ class Dummy(object):
         if isinstance(value,str):
             self.__name = value
         else:
-            raise Exception ValueError("name can only be a string")
+            raise ValueError("name can only be a string")
 
 if __name__ == "__main__":
     obj = Dummy(name="Abir")
