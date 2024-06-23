@@ -1,11 +1,6 @@
 name: first-workflow
 on: [push,workflow_dispatch]
 jobs:
-  docker:
-    runs-on: ubuntu-latest
-    steps:
-      - name: pull docker image
-        run: docker pull python:3.9
   test:
     runs-on: ubuntu-latest
     steps:
