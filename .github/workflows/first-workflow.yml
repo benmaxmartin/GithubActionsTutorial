@@ -1,12 +1,16 @@
 name: first-workflow
 on: workflow_dispatch
 jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run Tests
+        run: python test/dummy_tester.py
   run-script:
+    needs: test
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
       - name: Run Script
         run: python src/app.py
-      - name: Run Tests
-        run: python test/dummy_tester.py
