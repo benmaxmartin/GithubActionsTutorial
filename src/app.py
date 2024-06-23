@@ -1,3 +1,9 @@
+import os , sys
+
+current_dir = os.path.dirname(os.path.abspath(__file__))
+parent_dir = os.path.abspath(os.path.join(current_dir, os.pardir))
+sys.path.append(parent_dir)
+
 class Dummy(object):
     def __init__(self,name):
         self.__name = name
