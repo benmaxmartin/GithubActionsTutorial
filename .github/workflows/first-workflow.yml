@@ -4,6 +4,8 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
       - name: Run Tests
         run: python test/dummy_tester.py
   run-script:
