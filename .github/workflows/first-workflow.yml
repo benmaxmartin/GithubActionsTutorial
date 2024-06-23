@@ -1,7 +1,13 @@
 name: first-workflow
 on: [push,workflow_dispatch]
 jobs:
+  info:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get info
+        run: echo "{{toJSON(github)}}" 
   test:
+    needs: info
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
