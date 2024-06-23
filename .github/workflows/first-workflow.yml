@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Get info
-        run: echo "{{toJSON(github)}}" 
+        run: echo "${{toJSON(github)}}" 
   test:
     needs: info
     runs-on: ubuntu-latest
