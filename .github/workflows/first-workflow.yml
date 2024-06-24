@@ -47,4 +47,4 @@ jobs:
           overwrite: true
       - name: publish wheel file name
         id: publish
-        run: find dist/*.whl -type f -execdir echo 'wheel-file={}' >> $GITHUB_OUTPUT
+        run: find dist/*.whl -type f -execdir echo 'wheel-file={}' >> $GITHUB_OUTPUT ';'
