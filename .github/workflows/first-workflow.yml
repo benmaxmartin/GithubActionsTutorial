@@ -30,6 +30,8 @@ jobs:
   build:
     needs: run-script
     runs-on: ubuntu-latest
+    outputs:
+      wheel-file: ${{ steps.publish.outputs.wheel-file}}
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
@@ -42,3 +44,7 @@ jobs:
         with:
           name: dummy-wheel
           path: dist/*.whl
+          overwrite: true
+      - name: publish wheel file name
+        id: publish
+        run: find dist/*.whl -type -f execdir echo 'wheel-file={}' >> $GITHUB_OUTPUT
