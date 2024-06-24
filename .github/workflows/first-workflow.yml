@@ -49,7 +49,6 @@ jobs:
         id: publish
         run: find dist/*.whl -type f -execdir echo 'wheel-file={}' >> $GITHUB_OUTPUT ';'
   build-info:
-    name: view build file
     needs: build
     runs-on: ubuntu-latest
     steps:
