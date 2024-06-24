@@ -1,5 +1,11 @@
 name: first-workflow
-on: [push,workflow_dispatch]
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - .github/workflows/*
 jobs:
   info:
     runs-on: ubuntu-latest
