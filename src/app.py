@@ -16,9 +16,9 @@ class Dummy(object):
             raise ValueError("name can only be a string")
 
 if __name__ == "__main__":
-    name1 = os.getenv("NAME1")
+    name1 = os.environ.get("NAME1")
     obj = Dummy(name=name1)
     print(obj.name)
-    name2 = os.getenv("NAME2")
+    name2 = os.environ.get("NAME2")
     obj.name = name2
     print(obj.name)
