@@ -21,8 +21,8 @@ jobs:
   run-script:
     needs: test
     env:
-      NAME1: Abir
-      NAME2: Sankhadip Mazumder
+      NAME1: ${{ secrets.NAME1 }}
+      NAME2: ${{ secrets.NAME2}}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
