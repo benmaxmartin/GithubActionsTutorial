@@ -20,6 +20,7 @@ jobs:
         run: python test/dummy_tester.py
   run-script:
     needs: test
+    environment: dev
     env:
       NAME1: ${{ secrets.NAME1 }}
       NAME2: ${{ secrets.NAME2}}
