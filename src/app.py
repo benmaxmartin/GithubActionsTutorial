@@ -1,3 +1,5 @@
+import os
+
 class Dummy(object):
     def __init__(self,name):
         self.__name = name
@@ -14,7 +16,9 @@ class Dummy(object):
             raise ValueError("name can only be a string")
 
 if __name__ == "__main__":
-    obj = Dummy(name="Abir")
+    name1 = os.getenv("NAME1")
+    obj = Dummy(name=name1)
     print(obj.name)
-    obj.name = "Sankhadip"
+    name2 = os.getenv("NAME2")
+    obj.name = name2
     print(obj.name)

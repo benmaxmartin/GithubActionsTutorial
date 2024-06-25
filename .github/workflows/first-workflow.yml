@@ -29,6 +29,9 @@ jobs:
 
   build:
     needs: run-script
+    env:
+      NAME1: Abir
+      NAME2: Sankhadip Mazumder
     runs-on: ubuntu-latest
     outputs:
       wheel-file: ${{ steps.publish.outputs.wheel-file}}
