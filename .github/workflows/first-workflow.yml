@@ -20,6 +20,9 @@ jobs:
         run: python test/dummy_tester.py
   run-script:
     needs: test
+    env:
+      NAME1: Abir
+      NAME2: Sankhadip Mazumder
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
@@ -29,9 +32,6 @@ jobs:
 
   build:
     needs: run-script
-    env:
-      NAME1: Abir
-      NAME2: Sankhadip Mazumder
     runs-on: ubuntu-latest
     outputs:
       wheel-file: ${{ steps.publish.outputs.wheel-file}}
