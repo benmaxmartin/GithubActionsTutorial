@@ -22,3 +22,5 @@ if __name__ == "__main__":
     name2 = os.environ.get("NAME2")
     obj.name = name2
     print(obj.name)
+    if obj.name not in ["Abir","Sankhadip"]:
+        raise Exception("Name error")
