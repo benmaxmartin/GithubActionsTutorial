@@ -35,8 +35,13 @@ jobs:
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
+      - name: cache dependencies
+        uses: actions/cache@v3
+        with:
+          path: ~/.cache/pip
+          key: py-package-dep-${{hashFiles('./requirements.txt')}}
       - name: update setuptools and wheel
-        run: pip install --upgrade setuptools wheel
+        run: pip install --upgrade -r requirements.txt
       - name: create build
         run: python setup.py bdist_wheel
       - name: upload artifact
