@@ -20,7 +20,7 @@ jobs:
         id: run-test
         run: python test/dummy_tester.py
       - name: Run when test passes
-        if: steps.run-test.outcome == 'failure'
+        if: failure() && steps.run-test.outcome == 'failure'
         run: echo "I ran"
   run-script:
     needs: test
