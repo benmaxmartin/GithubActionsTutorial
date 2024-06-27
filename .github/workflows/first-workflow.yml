@@ -62,8 +62,13 @@ jobs:
         id: publish
         run: find dist/*.whl -type f -execdir echo 'wheel-file={}' >> $GITHUB_OUTPUT ';'
   build-info:
+    strategy:
+      matrix:
+        dummy-string: ['Hello','Bye','Hola']
     needs: build
     runs-on: ubuntu-latest
     steps:
       - name: view file
         run: echo "${{ needs.build.outputs.wheel-file}}"
+      - name: dummy print
+        run : echo "${{matrix.dummy-string}}"
